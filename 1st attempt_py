@@ -1,0 +1,26 @@
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        y = str(x)
+        ystring = list(y)
+        zstring = ""
+        if x > 0:
+            ylen = len(ystring)
+            for t in range(ylen-1,-1,-1):
+	            zstring = zstring + ystring[t]
+        elif x < 0:
+            ystring.pop(0)
+            ylen = len(ystring)
+            for t in range(ylen-1,-1,-1):
+	            zstring = zstring + ystring[t]
+            zstring = "-"+ zstring
+        else:
+            zstring = 0
+        zstring = int(zstring)
+        if (-pow(2,31))<= zstring <= (pow(2,31)-1):
+	        return zstring
+        else:
+	        return 0
